@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLR.MessageService.Core", "CLR.MessageService.Core\CLR.MessageService.Core.csproj", "{8E5AA239-BCF1-458B-AC36-570A46C7560A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLR.MessageService.WebApi", "CLR.MessageService.WebApi\CLR.MessageService.WebApi.csproj", "{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{8E5AA239-BCF1-458B-AC36-570A46C7560A}.Release|x64.Build.0 = Release|Any CPU
 		{8E5AA239-BCF1-458B-AC36-570A46C7560A}.Release|x86.ActiveCfg = Release|Any CPU
 		{8E5AA239-BCF1-458B-AC36-570A46C7560A}.Release|x86.Build.0 = Release|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Debug|x64.Build.0 = Debug|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Debug|x86.Build.0 = Debug|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Release|x64.ActiveCfg = Release|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Release|x64.Build.0 = Release|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Release|x86.ActiveCfg = Release|Any CPU
+		{EB264027-C1C2-4B8D-8E3F-EA130A2FBF03}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
