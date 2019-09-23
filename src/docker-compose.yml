@@ -11,3 +11,17 @@ services:
     build:
       context: .
       dockerfile: dockerfile.webapi
+  mysql:
+    image: 'mysql'
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: a@12345
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - ./data:/var/lib/mysql
+      - ./conf/my.cnf:/etc/my.cnf
+    deploy:
+      restart_policy:
+        condition: always
