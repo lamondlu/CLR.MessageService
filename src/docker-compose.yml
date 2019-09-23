@@ -1,0 +1,13 @@
+version: "3"
+services:
+  apiService:
+    image: 'clr.messageservice.webapi:v1'
+    container_name: myapi
+    ports:
+      - "5000:80"
+    deploy:
+      restart_policy:
+        condition: always
+    build:
+      context: .
+      dockerfile: dockerfile.webapi
