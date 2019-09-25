@@ -11,6 +11,23 @@ services:
     build:
       context: .
       dockerfile: dockerfile.webapi
+  influxdb:
+    image: 'influxdb'
+    container_name: myinfluxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+    deploy:
+      restart_policy:
+        condition: always 
+  grafana:
+    image: 'grafana/grafana'
+    container_name: mygrafana
+    ports:
+      - "3000:3000"
+    deploy:
+      restart_policy:
+        condition: always  
   mysql:
     image: 'mysql'
     container_name: mysql
