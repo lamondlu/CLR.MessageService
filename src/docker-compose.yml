@@ -11,12 +11,18 @@ services:
     build:
       context: .
       dockerfile: dockerfile.webapi
+    links:
+      - influxdb
+    depends_on:
+      - influxdb
   influxdb:
     image: 'influxdb'
     container_name: myinfluxdb
     ports:
       - "8083:8083"
       - "8086:8086"
+    environment:
+      INFLUXDB_ADMIN_ENABLED: "true"
     deploy:
       restart_policy:
         condition: always 
@@ -28,6 +34,10 @@ services:
     deploy:
       restart_policy:
         condition: always  
+    links:
+      - influxdb
+    depends_on:
+      - influxdb
   mysql:
     image: 'mysql'
     container_name: mysql
