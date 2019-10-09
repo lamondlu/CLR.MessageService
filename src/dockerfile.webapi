@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
@@ -10,7 +10,7 @@ RUN dotnet restore "./CLR.MessageService.WebApi/CLR.MessageService.WebApi.csproj
 COPY ./CLR.MessageService.Core ./CLR.MessageService.Core
 COPY ./CLR.MessageService.WebApi ./CLR.MessageService.WebApi
 WORKDIR /src/CLR.MessageService.WebApi
-RUN dotnet build "CLR.MessageService.WebApi.csproj" -c Release -o /app
+RUN dotnet publish "CLR.MessageService.WebApi.csproj" -c Release -o /app
 
 FROM build as publish 
 
