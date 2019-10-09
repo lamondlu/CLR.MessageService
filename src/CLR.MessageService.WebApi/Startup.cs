@@ -28,7 +28,7 @@ namespace CLR.MessageService.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-              string IsOpen = Configuration.GetSection("InfluxDB")["IsOpen"].ToLower();
+            string IsOpen = Configuration.GetSection("InfluxDB")["IsOpen"].ToLower();
             if (IsOpen == "true")
             {
                 string database = Configuration.GetSection("InfluxDB")["DataBaseName"];
@@ -37,9 +37,9 @@ namespace CLR.MessageService.WebApi
                 string env = Configuration.GetSection("InfluxDB")["env"];
                 string username = Configuration.GetSection("InfluxDB")["username"];
                 string password = Configuration.GetSection("InfluxDB")["password"];
- 
+
                 var uri = new Uri(InfluxDBConStr);
- 
+
                 var metrics = AppMetrics.CreateDefaultBuilder()
                 .Configuration.Configure(
                 options =>
@@ -60,7 +60,7 @@ namespace CLR.MessageService.WebApi
                     options.FlushInterval = TimeSpan.FromSeconds(5);
                 })
                 .Build();
- 
+
                 services.AddMetrics(metrics);
                 services.AddMetricsReportScheduler();
                 services.AddMetricsTrackingMiddleware();
@@ -93,7 +93,7 @@ namespace CLR.MessageService.WebApi
                 app.UseMetricsRequestTrackingMiddleware();
                 app.UseMetricsOAuth2TrackingMiddleware();
                 app.UseMetricsApdexTrackingMiddleware();
- 
+
                 app.UseMetricsAllEndpoints();
                 // Or to cherry-pick endpoint of interest
                 app.UseMetricsEndpoint();
