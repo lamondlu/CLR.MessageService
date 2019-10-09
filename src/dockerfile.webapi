@@ -12,8 +12,7 @@ COPY ./CLR.MessageService.WebApi ./CLR.MessageService.WebApi
 WORKDIR /src/CLR.MessageService.WebApi
 RUN dotnet build "CLR.MessageService.WebApi.csproj" -c Release -o /app
 
-FROM build as publish
-RUN dotnet publish "CLR.MessageService.WebApi.csproj" -c Release -o /app
+FROM build as publish 
 
 FROM base as final
 WORKDIR /app
